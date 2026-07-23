@@ -1,0 +1,344 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+//
+{
+  // 禁用匿名数据上报
+  "auto_update_extensions": {
+    "java": false,
+  },
+  "cli_default_open_behavior": "new_window",
+  "agent_servers": {
+    "claude-acp": {
+      "default_config_options": {
+        "model": "sonnet",
+      },
+      "type": "registry",
+    },
+    "codex-acp": {
+      "type": "registry",
+    },
+  },
+  "language_models": {
+    "anthropic_compatible": {
+      "JD-Claude": {
+        "api_url": "http://llm-gw.jd.local/anthropic",
+        "available_models": [
+          {
+            "name": "Claude-Opus-4.8-joybuilder",
+            "display_name": "Claude-4.8",
+            "max_tokens": 128000,
+            "max_output_tokens": 64000,
+            "extra_beta_headers": [],
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "prompt_caching": true,
+            },
+          },
+        ],
+      },
+    },
+    "openai_compatible": {
+      "Zhipu": {
+        "api_url": "https://open.bigmodel.cn/api/paas/v4",
+        "available_models": [
+          {
+            "name": "glm-5.1",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+          {
+            "name": "glm-4.5-air",
+            "max_tokens": 128000,
+            "max_output_tokens": 96000,
+            "max_completion_tokens": 128000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+          {
+            "name": "glm-4.6v",
+            "max_tokens": 128000,
+            "max_output_tokens": 96000,
+            "max_completion_tokens": 128000,
+            "capabilities": {
+              "tools": true,
+              "images": true,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+        ],
+      },
+      "JD": {
+        "api_url": "http://llm-gw.jd.local/v1",
+        "available_models": [
+          {
+            "name": "GLM-5.2-joybuilder",
+            "display_name": "GLM-5.2",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+          {
+            "name": "JoyAI-LLM-1.3T-joybuilder",
+            "display_name": "JoyAI-1.3T",
+            "max_tokens": 200000,
+            "max_output_tokens": 128000,
+            "max_completion_tokens": 200000,
+            "capabilities": {
+              "tools": true,
+              "images": false,
+              "parallel_tool_calls": true,
+              "prompt_cache_key": true,
+              "chat_completions": true,
+              "interleaved_reasoning": false,
+            },
+          },
+        ],
+      },
+    },
+  },
+  "icon_theme": "Catppuccin Latte",
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+  },
+
+  "theme": {
+    "mode": "light",
+    "light": "Catppuccin Latte",
+    "dark": "GitHub Dark Dimmed",
+  },
+
+  "vim_mode": true,
+
+  // =========================================================
+  // 外观配置
+  "collaboration_panel": {
+    "button": false,
+  },
+  "git_panel": {
+    "show_count_badge": false,
+    "file_icons": false,
+    "tree_view": false,
+    "fallback_branch_name": "master",
+  },
+  "outline_panel": {
+    "dock": "left",
+  },
+  "project_panel": {
+    "git_status_indicator": true,
+    "dock": "left",
+  },
+  "agent": {
+    "tool_permissions": {
+      "tools": {
+        "fetch": {
+          "always_allow": [
+            {
+              "pattern": "^https?://docs\\.rs",
+            },
+          ],
+        },
+      },
+    },
+    "dock": "right",
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "JD-Claude",
+      "model": "Claude-Opus-4.8-joybuilder",
+      "enable_thinking": false,
+    },
+    "favorite_models": [],
+    "model_parameters": [],
+  },
+
+  "ui_font_size": 16,
+  "agent_buffer_font_size": 16,
+  "agent_ui_font_size": 20,
+  // 用户界面（UI）中的字体样式
+  "ui_font_family": "jingdonglangzhengti2",
+  "buffer_font_size": 18,
+  // 代码编辑区（Buffer）的字体样式
+  "buffer_font_family": "LXGW WenKai",
+  "buffer_font_weight": 500,
+  "relative_line_numbers": "disabled",
+  // 隐藏标签栏中的导航历史按钮
+  "tab_bar": {
+    "show_nav_history_buttons": false,
+  },
+  // 启用文件图标显示，在标签页中显示文件类型对应的图标
+  // 在标签页中显示文件的 Git 状态
+  "tabs": {
+    "file_icons": true,
+    "git_status": true,
+  },
+  // 内联提示设置
+  "inlay_hints": {
+    "enabled": true,
+    // "font_family": "Consolas",
+  },
+  // 根据缩进级别进行着色
+  "indent_guides": {
+    "coloring": "indent_aware",
+  },
+  // 启用软换行，当行长度超过编辑器宽度时自动换行
+  "soft_wrap": "editor_width",
+  // 启用文件保存时自动格式化功能
+  "format_on_save": "on",
+  // 设置垂直滚动的边距
+  "vertical_scroll_margin": 6,
+  // 编辑器启动时不会自动恢复上次打开的文件或会话
+  "restore_on_startup": "last_workspace",
+  // 禁用在新行继续注释的功能
+  "extend_comment_on_newline": true,
+
+  // =========================================================
+  // 终端配置
+  "terminal": {
+    "font_family": "AnonymicePro Nerd Font Mono",
+    // 启用在终端中选择文本时自动复制到剪贴板的功能
+    "copy_on_select": true,
+  },
+
+  // =========================================================
+  // 文件配置
+  // An object whose keys are language names, and whose values
+  // are arrays of filenames or extensions of files that should
+  // use those languages.
+  //
+  // For example, to treat files like `foo.notjs` as JavaScript,
+  // and 'Embargo.lock' as TOML:
+  //
+  // {
+  //   "JavaScript": ["notjs"],
+  //   "TOML": ["Embargo.lock"]
+  // }
+  //
+  "file_types": {},
+  // Different settings for specific languages.
+  "languages": {
+    "C++": {
+      "format_on_save": "off",
+    },
+    "C": {
+      "format_on_save": "off",
+    },
+    // "Gleam": {
+    //   "tab_size": 2,
+    // },
+    "Go": {
+      "code_actions_on_format": {
+        "source.organizeImports": true,
+      },
+    },
+    // "Make": {
+    //   "hard_tabs": true,
+    // },
+    // "Prisma": {
+    //   "tab_size": 2,
+    // },
+    "Java": {
+      "hard_tabs": false,
+      "tab_size": 4,
+      "formatter": {
+        "external": {
+          "command": "/Users/jiamu/.local/share/spring-javaformat/spring-format",
+          "arguments": ["{buffer_path}"],
+        },
+      },
+    },
+  },
+
+  "lsp": {
+    "jdtls": {
+      "settings": {
+        // Path to a JDK 21+ used to run JDTLS.
+        // Also accepts the legacy key "java.home".
+        "java_home": "/opt/homebrew/opt/openjdk@21/libexec/openjdk.jdk/Contents/Home",
+        "lombok_support": true,
+        "jdk_auto_download": false,
+
+        // JVM heap size for JDTLS (maps to -Xms and -Xmx)
+        // Accepts values like "512m", "1G", "4096m", etc.
+        "min_memory": "4G", // default: "1G"
+        "max_memory": "16G", // default: unset (no -Xmx limit)
+
+        // Controls when to check for updates for JDTLS, Lombok, and Debugger
+        // - "always" (default): Always check for and download the latest version
+        // - "once": Check for updates only if no local installation exists
+        // - "never": Never check for updates, only use existing local installations (errors if missing)
+        //
+        // Note: Invalid values will default to "always"
+        // If custom paths (below) are provided, check_updates is IGNORED for that component
+        "check_updates": "always",
+
+        // Use custom installations instead of managed downloads
+        // When these are set, the extension will not download or manage these components
+        "jdtls_launcher": "/Users/jiamu/.local/jdtls/bin/jdtls",
+        "lombok_jar": "/Users/jiamu/.local/lombok.jar",
+        // "java_debug_jar": "/path/to/your/com.microsoft.java.debug.plugin.jar",
+        "lsp_proxy_path": "/Users/jiamu/.local/bin/java-lsp-proxy",
+      },
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "configuration": {
+              "runtimes": [
+                {
+                  "name": "JavaSE-1.8",
+                  "path": "/Library/Java/JavaVirtualMachines/temurin-8.jdk/Contents/Home",
+                },
+                {
+                  "name": "JavaSE-11",
+                  "path": "/opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk/Contents/Home",
+                  "default": true,
+                },
+              ],
+              "maven": {
+                "userSettings": "~/.m2/settings.xml",
+                // Optional: global settings for system-wide configuration
+                // "globalSettings": "/path/to/global/settings.xml",
+              },
+            },
+          },
+        },
+      },
+    },
+  },
+
+  "edit_predictions": {
+    "provider": "copilot",
+  },
+}
